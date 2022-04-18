@@ -10,7 +10,7 @@ public class File extends SysElement {
         this.content = content;
     }
 
-    public String getContent() { // per futura letture
+    public String getContent() { // per future letture
         return content;
     }
 
