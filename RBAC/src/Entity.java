@@ -29,4 +29,6 @@ public class Entity {
 
     }
 
+    // ho bisogno di un metodo equals (override) che sia deep
+    // anche di un metodo clone deep
 }

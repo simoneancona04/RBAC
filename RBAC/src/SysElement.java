@@ -16,5 +16,6 @@ public class SysElement {
     public void setName(String name) {this.name = name;}
 
     public AccessTable getAct() {return act;}
+    public AccessTable copyAct() {return act.copy();}
     public void setAct(AccessTable act) {this.act = act;}
 }

@@ -4,7 +4,7 @@ public class Tree {
     //chiarlo
 
     
-    private String name;
+    private String name;    // c'è già in syselement
     private Tree parent;
     private ArrayList<Tree> children;
 

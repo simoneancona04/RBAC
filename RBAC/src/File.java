@@ -5,7 +5,7 @@ public class File extends SysElement {
 //chiarlo
     private String content;
     
-    public File(String name,String content, AccessTable act) {
+    public File(String name, String content, AccessTable act) {
         super(name, act);
         this.content = content;
     }
