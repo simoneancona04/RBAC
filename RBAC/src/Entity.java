@@ -4,14 +4,14 @@ public class Entity {
     private String password;
     //TODO private Role role;
 
-    public Entity(String userName, String password, String ruolo) {
+    public Entity(String userName, String password, String role) {
         this.userName = userName;
         this.password = password;
-        this.ruolo = ruolo;
+        //this.role = role;
 
     }
 
-    public void createEntity(String userName, String password, String ruolo) {
+    public void createEntity(String userName, String password, String role) {
         //implementazione tipo:
         //utenti.add( new Entity(userName, password, ruolo))
         //a seconda se si utilizza direttamente json o si tiene un appoggio
