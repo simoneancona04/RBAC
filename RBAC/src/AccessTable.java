@@ -9,18 +9,40 @@ public class AccessTable {
         table.put(SysElementOperation.READ, new ArrayList<Entity>());
         table.put(SysElementOperation.WRITE, new ArrayList<Entity>());
     }
-
+    /**
+     * Restituisce una valore booleano che indica se {@code entity} può leggere l'elemento
+     * @param entity
+     * @return {@code true} se può leggere l'elemento, altrimenti {@code false}
+     */
     public boolean canRead(Entity entity) {
         table.get(SysElementOperation.READ).contains(entity);
     }
 
+    /**
+     * Restituisce una valore booleano che indica se {@code entity} può modificare l'elemento
+     * @param entity
+     * @return {@code true} se può modificare l'elemento, altrimenti {@code false}
+     */
     public boolean canWrite(Entity entity) {
         table.get(SysElementOperation.WRITE).contains(entity);
     }
 
+    /**
+     * Restituisce una lista di {@code Entity} rappresentante coloro che possono leggere l'elemento
+     * @return {@code ArrayList<Entity>} lista di utenti
+     */
     public ArrayList<Entity> getReaders() { return table.get(SysElementOperation.READ); }
+    
+    /**
+     * Restituisce una lista di {@code Entity} rappresentante coloro che possono modificare l'elemento
+     * @return {@code ArrayList<Entity>} lista di utenti
+     */
     public ArrayList<Entity> getWriters() { return table.get(SysElementOperation.WRITE); }
 
+    /**
+     * Crea una copia dell'oggetto
+     * @return una nuova AccessTable uguale all'oggetto che chiama il metodo
+     */
     public AccessTable clone() {
         AccessTable act = new AccessTable();
         for (Entity entity : act.table.get(SysElementOperation.READ)) {

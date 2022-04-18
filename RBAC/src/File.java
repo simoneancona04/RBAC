@@ -18,8 +18,8 @@ public class File extends SysElement {
         this.content = content;
     }
 
-    public boolean accepts(String name, Operation mode){
-        return getAct().permits(name, mode);
+    public boolean accepts(String name, Operation /* intendevi forse SysElementOperation? */ mode){
+        return getAct().permits(name, mode);    // ho usato canRead e canWrite, oppure usi getReaders o getWriters
     }
 
 

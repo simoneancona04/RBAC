@@ -2,7 +2,7 @@ public class Entity {
 //chiarlo
     private String userName;
     private String password;
-    //TODO private Role role;
+    //TODO private Role role;   // Operation?
 
     public Entity(String userName, String password, String role) {
         this.userName = userName;
