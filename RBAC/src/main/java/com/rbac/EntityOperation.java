@@ -1,3 +1,5 @@
+package com.rbac;
+
 public enum EntityOperation {
     ADD_NEW_USER,
     PROMOTE_TO_ADMIN,

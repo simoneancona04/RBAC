@@ -1,3 +1,5 @@
+package com.rbac;
+
 public class SysElement {
     private AccessTable act;
     private String name;

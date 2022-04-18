@@ -16,7 +16,7 @@ public class App extends Application {
 
     private static Scene scene;
     static ArrayList<User> users = new ArrayList<User>();
-    static User currentUser;
+    static Entity currentEntity;
     static ArrayList<String> currentDirectoryChildren = new ArrayList<>();
     
     //static Directory currentDirectory;

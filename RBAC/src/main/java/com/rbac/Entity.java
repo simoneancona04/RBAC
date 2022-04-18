@@ -1,3 +1,5 @@
+package com.rbac;
+
 public class Entity {
 //chiarlo
     private String userName;
