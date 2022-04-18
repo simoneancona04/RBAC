@@ -36,8 +36,12 @@ public class File extends SysElement {
     // ok, cmq, non riesco a fare quasi niente senza intellisense, esco da live share
     //va bene, faccio un commit così hai la roba più recente, ok
     
-    public boolean accepts(SysElementOperation op){ /* intendevi forse SysElementOperation? */{
-        return getAct().permits(name, op);    // ho usato canRead e canWrite, oppure usi getReaders o getWriters
+    public boolean read(){
+        return getAct().canRead(App.currentEntity);
+    }
+
+    public boolean write(){
+        return getAct().canWrite(App.currentEntity);
     }
 
 
