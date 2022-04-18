@@ -4,7 +4,7 @@ public class Entity {
     private String password;
     //TODO private Role role;   // Operation?
 
-    public Entity(String userName, String password, String role) {
+    public Entity(String userName, String password) {
         this.userName = userName;
         this.password = password;
         //this.role = role;
@@ -17,18 +17,14 @@ public class Entity {
         //a seconda se si utilizza direttamente json o si tiene un appoggio
     }
 
-    public boolean open(SysElement target, Operation mode){
-
-        
-        if(target.accepts(userName,mode)){ //TODO da implementare in file e folder
-            //fai cose
-            return true;
-        }
-
-        return false;
-
+    // ho bisogno di un metodo equals (override) che sia deep
+    @Override
+    public boolean equals(Object o) {
+        return userName.equals(((Entity)o).userName) && userName.equals(((Entity)o).password);
     }
 
-    // ho bisogno di un metodo equals (override) che sia deep
     // anche di un metodo clone deep
+    public Entity clone(){
+        return new Entity(userName,password);
+    }
 }

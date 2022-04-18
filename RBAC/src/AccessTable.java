@@ -15,7 +15,7 @@ public class AccessTable {
      * @return {@code true} se può leggere l'elemento, altrimenti {@code false}
      */
     public boolean canRead(Entity entity) {
-        table.get(SysElementOperation.READ).contains(entity);
+        return table.get(SysElementOperation.READ).contains(entity);
     }
 
     /**
@@ -24,7 +24,7 @@ public class AccessTable {
      * @return {@code true} se può modificare l'elemento, altrimenti {@code false}
      */
     public boolean canWrite(Entity entity) {
-        table.get(SysElementOperation.WRITE).contains(entity);
+        return table.get(SysElementOperation.WRITE).contains(entity);
     }
 
     /**
@@ -55,4 +55,99 @@ public class AccessTable {
 
         return act;
     }
-}
+
+    /**
+     * Aggiungi un nuovo utente con permessi di lettura
+     * @param entity l'utente da aggiungere ai permessi
+     */
+    public void addReader(Entity entity) {
+        table.get(SysElementOperation.READ).add(entity);
+    }
+
+    /**
+     * Aggiungi un nuovo utente con permessi di scrittura
+     * @param entity l'utente da aggiungere ai permessi
+     */
+    public void addWriter(Entity entity) {
+        table.get(SysElementOperation.WRITE).add(entity);
+    }
+}    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

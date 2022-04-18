@@ -1,4 +1,13 @@
-public class Operation {
+public enum EntityOperation {
+    ADD_NEW_USER,
+    PROMOTE_TO_ADMIN,
+    MODIFY_USER_OPERATIONS
+}
+
+
+
+
+    
 //chiarlo
 //non ricordo come la si voleva implementare,sad 
     /*
@@ -10,4 +19,3 @@ public class Operation {
         PROMOTE TO ADMIN
         MODIFY USER OPERATIONS
     */
-}

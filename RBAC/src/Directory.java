@@ -1,10 +1,9 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-
-import javax.swing.DefaultRowSorter;
+import com.fasterxml.jackson.core.JsonParser;
 
 public class Directory extends SysElement {
+    @JSONignore
     private Directory parent;
     private ArrayList<Directory> nodes;
     private ArrayList<File> files;
@@ -35,7 +34,7 @@ public class Directory extends SysElement {
     }
 
     public ArrayList<Directory> getDirectories() {
-        return directories;
+        return nodes;
     }
 
     public Directory getDirectory(String path) {
@@ -49,7 +48,7 @@ public class Directory extends SysElement {
         }
         for(Directory dir : nodes) {
             if(dir.getName().equals(address[0])) {
-                return getDirectory(Arrays.copyOfRange(path, 1, address.length));
+                return getDirectory(Arrays.copyOfRange(address, 1, address.length));
             }
         }
         return null;
