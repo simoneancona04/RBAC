@@ -39,8 +39,9 @@ public class App extends Application {
 
     public static void main(String[] args) {
         FileSys fileSys = new FileSys();
-        currentEntity = new Entity("mimmo","123");
+
         users.add(new Entity("mimmo","123"));
+        currentEntity = users.get(0);
         currentDirectoryChildren.add("file 1");
         currentDirectoryChildren.add("file 2");
         currentDirectoryChildren.add("file 3");
