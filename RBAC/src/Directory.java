@@ -1,14 +1,19 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonParser;
 
 public class Directory extends SysElement {
-    @JSONignore
+    @JsonIgnore
     private Directory parent;
     private ArrayList<Directory> nodes;
     private ArrayList<File> files;
     
-    public Directory(String name, AccessTable act) {
+    @JsonCreator
+    public Directory(@JsonProperty("name") String name, @JsonProperty("act") AccessTable act) {
         super(name, act);
         parent = null;
     }

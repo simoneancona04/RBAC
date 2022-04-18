@@ -1,0 +1,8 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "RBAC/lib/jackson-annotations-2.13.1.jar",
+        "RBAC/lib/jackson-core-2.13.1.jar",
+        "RBAC/lib/jackson-databind-2.13.1.jar"
+    ]
+}
