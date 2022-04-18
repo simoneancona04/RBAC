@@ -30,6 +30,11 @@ public class File extends SysElement {
     }
 
 
+
+    // ssecondo te ci sta tipo in syselement un attributo: data di creazione, ultima modifica?
+    //secondo me si, ma avevamo detto che sarebbero state cose da aggiungere più avanti, volendo. ma comunque non ci starebbero male
+    // ok, cmq, non riesco a fare quasi niente senza intellisense, esco da live share
+    //va bene, faccio un commit così hai la roba più recente, ok
     
     public boolean accepts(SysElementOperation op){ /* intendevi forse SysElementOperation? */{
         return getAct().permits(name, op);    // ho usato canRead e canWrite, oppure usi getReaders o getWriters
