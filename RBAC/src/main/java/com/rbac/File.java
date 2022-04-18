@@ -1,8 +1,5 @@
 package com.rbac;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class File extends SysElement {
 //chiarlo
     private String content;

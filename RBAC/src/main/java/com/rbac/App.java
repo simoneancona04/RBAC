@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class App extends Application {
 
     private static Scene scene;
-    static ArrayList<User> users = new ArrayList<User>();
+    static ArrayList<Entity> users = new ArrayList<Entity>();
     static Entity currentEntity;
     static ArrayList<String> currentDirectoryChildren = new ArrayList<>();
     
@@ -40,7 +40,7 @@ public class App extends Application {
     public static void main(String[] args) {
         FileSys fileSys = new FileSys();
         currentEntity = new Entity("mimmo","123");
-        users.add(new User("mimmo","123"));
+        users.add(new Entity("mimmo","123"));
         currentDirectoryChildren.add("file 1");
         currentDirectoryChildren.add("file 2");
         currentDirectoryChildren.add("file 3");

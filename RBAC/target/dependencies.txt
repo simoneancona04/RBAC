@@ -1,0 +1,13 @@
+digraph "com.rbac:rbacgui:jar:1" { 
+	"com.rbac:rbacgui:jar:1" -> "com.fasterxml.jackson.core:jackson-databind:jar:2.12.4:compile" ; 
+	"com.rbac:rbacgui:jar:1" -> "org.openjfx:javafx-controls:jar:13:compile" ; 
+	"com.rbac:rbacgui:jar:1" -> "org.openjfx:javafx-fxml:jar:13:compile" ; 
+	"com.fasterxml.jackson.core:jackson-databind:jar:2.12.4:compile" -> "com.fasterxml.jackson.core:jackson-annotations:jar:2.12.4:compile" ; 
+	"com.fasterxml.jackson.core:jackson-databind:jar:2.12.4:compile" -> "com.fasterxml.jackson.core:jackson-core:jar:2.12.4:compile" ; 
+	"org.openjfx:javafx-controls:jar:13:compile" -> "org.openjfx:javafx-controls:jar:win:13:compile" ; 
+	"org.openjfx:javafx-controls:jar:13:compile" -> "org.openjfx:javafx-graphics:jar:13:compile" ; 
+	"org.openjfx:javafx-graphics:jar:13:compile" -> "org.openjfx:javafx-graphics:jar:win:13:compile" ; 
+	"org.openjfx:javafx-graphics:jar:13:compile" -> "org.openjfx:javafx-base:jar:13:compile" ; 
+	"org.openjfx:javafx-base:jar:13:compile" -> "org.openjfx:javafx-base:jar:win:13:compile" ; 
+	"org.openjfx:javafx-fxml:jar:13:compile" -> "org.openjfx:javafx-fxml:jar:win:13:compile" ; 
+ } 

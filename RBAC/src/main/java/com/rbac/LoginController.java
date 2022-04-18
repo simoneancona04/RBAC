@@ -22,11 +22,11 @@ public class LoginController {
         
         if (username == null || password == null) return;
         
-        for(User u:App.users) {
+        for(Entity u:App.users) {
             if (u.getName().equals(username) && u.getPassword().equals(password)){
                 //App.setRoot("admin");
                 App.setRoot("user");
-                App.currentUser = u;
+                App.currentEntity = u;
                 break;
             }
         }

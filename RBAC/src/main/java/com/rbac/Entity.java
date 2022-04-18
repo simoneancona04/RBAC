@@ -29,4 +29,20 @@ public class Entity {
     public Entity clone(){
         return new Entity(userName,password);
     }
+
+    public String getName(){
+        return userName;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+
+    public void setName(String userName){
+        this.userName = userName;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
+    }
 }

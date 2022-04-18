@@ -3,12 +3,9 @@ package com.rbac;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.core.JsonParser;
 
 public class Directory extends SysElement {
+    
     @JsonIgnore
     private Directory parent;
     private ArrayList<Directory> nodes;
