@@ -25,8 +25,12 @@ public class LoginController {
         Entity e = App.users.get(username, password);
         
         if (e != null) {
-            App.setRoot("admin");
-            //App.setRoot("user");
+            if(e.isAdmin()){
+                App.setRoot("admin");
+            }
+            else{
+                App.setRoot("user");
+            }
             App.currentEntity = e;
         }
 
