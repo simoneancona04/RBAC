@@ -1,12 +1,17 @@
 package com.rbac;
+import com.fasterxml.jackson.annotation.*;
 
+// scusa se ti ho modificato un po' questo file ma mi serviva per jackson
 public class Entity {
 //chiarlo
     private String userName;
     private String password;
     //TODO private Role role;   // Operation?
 
-    public Entity(String userName, String password) {
+    // ho bisongo di qualcosa per le Operations...
+
+    @JsonCreator
+    public Entity(@JsonProperty("userName") String userName, @JsonProperty("userName") String password) {
         this.userName = userName;
         this.password = password;
         //this.role = role;
@@ -19,7 +24,6 @@ public class Entity {
         //a seconda se si utilizza direttamente json o si tiene un appoggio
     }
 
-    // ho bisogno di un metodo equals (override) che sia deep
     @Override
     public boolean equals(Object o) {
         return userName.equals(((Entity)o).userName) && userName.equals(((Entity)o).password);

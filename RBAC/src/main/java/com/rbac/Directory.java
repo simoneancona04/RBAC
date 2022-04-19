@@ -3,16 +3,18 @@ package com.rbac;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.fasterxml.jackson.annotation.*;
+
 
 public class Directory extends SysElement {
     
-    //@JsonIgnore
+    @JsonIgnore
     private Directory parent;
     private ArrayList<Directory> nodes;
     private ArrayList<File> files;
     
     //@JsonCreator
-    public Directory(/*@JsonProperty("name") */String name, /*@JsonProperty("act")*/ AccessTable act) {
+    public Directory(@JsonProperty("name") String name, @JsonProperty("act") AccessTable act) {
         super(name, act);
         parent = null;
     }
@@ -21,12 +23,29 @@ public class Directory extends SysElement {
         super(name, parent.getAct().clone());
     }
 
-    public void addDirectory(Directory directory) {
+    public void addDirectory(Directory directory) throws DuplicateName {
+        if(containsDir(directory)) throw new DuplicateName();
         nodes.add(directory);
     }
 
-    public void addFile(File file) {
+    public void addFile(File file) throws DuplicateName {
+        if(containsFile(file)) throw new DuplicateName();
         files.add(file);
+    }
+
+    public boolean containsDir(Directory dir) {
+        for (Directory node : nodes) {
+            if(node.getName().equals(dir.getName())) return true;
+        }
+
+        return false;
+    }
+
+    public boolean containsFile(File f) {
+        for (File file : files) {
+            if(file.getName().equals(f.getName()) && file.getExtension().equals(f.getExtension())) return true;
+        }
+        return false;
     }
 
     public Directory getParent() {
