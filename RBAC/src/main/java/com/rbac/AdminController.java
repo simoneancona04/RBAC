@@ -9,10 +9,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 
 public class AdminController {
-    @FXML
-    private void switchWindow() throws IOException { // servisse
-        App.setRoot("admin");
-    }
+    
 
     @FXML
     FlowPane elementContainer;
@@ -29,7 +26,7 @@ public class AdminController {
             switch(op){
                 case ADD_NEW_USER:
                 Button tmp = new Button("add new user");
-                tmp.setOnAction(arg0);
+                tmp.setOnAction(e->App.setRoot("registration"));
                 usrActionContainer.getChildren().add(tmp);
                 break;
             }
