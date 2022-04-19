@@ -5,10 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 
 /**
  * JavaFX App
@@ -19,9 +16,7 @@ public class App extends Application {
     static Users users = new Users();
     static FileSys fileSys = new FileSys();
     static Entity currentEntity;
-    static ArrayList<String> currentDirectoryChildren = new ArrayList<>();
-    
-    //static Directory currentDirectory;
+    static Directory currentDirectory;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -59,21 +54,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-
-        currentEntity = users.get("mimmo", "123");
-        currentDirectoryChildren.add("file 1");
-        currentDirectoryChildren.add("file 2");
-        currentDirectoryChildren.add("file 3");
-        currentDirectoryChildren.add("file 4");
-        currentDirectoryChildren.add("file 5");
-        currentDirectoryChildren.add("file 6");
-        currentDirectoryChildren.add("file 7");
-        currentDirectoryChildren.add("file 8");
-        currentDirectoryChildren.add("file 9");
-        currentDirectoryChildren.add("file 10");
-        currentDirectoryChildren.add("file 11");
-        currentDirectoryChildren.add("file 12");
-        currentDirectoryChildren.add("uffa 13");
+        currentDirectory = fileSys.getHome();
         launch();
     }
 

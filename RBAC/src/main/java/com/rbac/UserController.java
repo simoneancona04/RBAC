@@ -25,8 +25,8 @@ public class UserController {
 
     public void refreshContent() {
         elementContainer.getChildren().clear();
-        for(String f : App.currentDirectoryChildren){   
-            elementContainer.getChildren().add(new Button(f));
+        for(Directory f : App.currentDirectory.getDirectories()){   
+            elementContainer.getChildren().add(new Button(f.getName()));
         }
     }
 
