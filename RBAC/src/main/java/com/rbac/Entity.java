@@ -65,4 +65,8 @@ public class Entity {
     public void setPassword(String password){
         this.password = password;
     }
+
+    public ArrayList<EntityOperation> getOperations(){
+        return operations;
+    }
 }
