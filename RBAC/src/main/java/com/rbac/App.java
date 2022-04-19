@@ -15,7 +15,8 @@ import java.util.ArrayList;
 public class App extends Application {
 
     private static Scene scene;
-    static ArrayList<Entity> users = new ArrayList<Entity>();
+    static Users users = new Users();
+    static FileSys fileSys = new FileSys();
     static Entity currentEntity;
     static ArrayList<String> currentDirectoryChildren = new ArrayList<>();
     
@@ -38,10 +39,14 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        FileSys fileSys = new FileSys();
 
-        users.add(new Entity("mimmo","123"));
-        currentEntity = users.get(0);
+        try {
+            users.add(new Entity("mimmo","123"));
+        } catch (DuplicateName e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        currentEntity = users.get("mimmo", "123");
         currentDirectoryChildren.add("file 1");
         currentDirectoryChildren.add("file 2");
         currentDirectoryChildren.add("file 3");

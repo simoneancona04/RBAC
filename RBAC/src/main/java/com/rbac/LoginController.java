@@ -1,6 +1,7 @@
 package com.rbac;
 
 import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -21,15 +22,14 @@ public class LoginController {
         System.out.println(username + " " + password);
         
         if (username == null || password == null) return;
+        Entity e = App.users.get(username, password);
         
-        for(Entity u:App.users) {
-            if (u.getName().equals(username) && u.getPassword().equals(password)){
-                //App.setRoot("admin");
-                App.setRoot("user");
-                App.currentEntity = u;
-                break;
-            }
+        if (e != null){
+            //App.setRoot("admin");
+            App.setRoot("user");
+            App.currentEntity = e;
         }
+
         return;
 
     }

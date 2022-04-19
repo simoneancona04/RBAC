@@ -1,6 +1,7 @@
 package com.rbac;
 
 import java.io.IOException;
+import java.security.KeyStore.Entry;
 import java.util.*;
 
 import com.fasterxml.jackson.core.*;
@@ -48,6 +49,13 @@ public class Users {
             users.remove(entity);
             return;
         }
+    }
+
+    public Entity get(String name, String password) {
+        for(Entity entity : users) {
+            if(entity.getName().equals(name) && entity.getPassword().equals(password)) return entity;
+        }
+        return null;
     }
 }
 
