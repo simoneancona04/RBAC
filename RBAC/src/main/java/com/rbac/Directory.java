@@ -6,13 +6,13 @@ import java.util.Arrays;
 
 public class Directory extends SysElement {
     
-    @JsonIgnore
+    //@JsonIgnore
     private Directory parent;
     private ArrayList<Directory> nodes;
     private ArrayList<File> files;
     
-    @JsonCreator
-    public Directory(@JsonProperty("name") String name, @JsonProperty("act") AccessTable act) {
+    //@JsonCreator
+    public Directory(/*@JsonProperty("name") */String name, /*@JsonProperty("act")*/ AccessTable act) {
         super(name, act);
         parent = null;
     }
