@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="341.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="341.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rbac.RegistrationController">
    <children>
       <Label layoutX="223.0" layoutY="35.0" text="Nuovo  utente">
          <font>
@@ -17,11 +17,11 @@
          </font>
       </Label>
       <TextField layoutX="225.0" layoutY="104.0" />
-      <Label layoutX="141.0" layoutY="108.0" text="Nome utente" />
-      <Label layoutX="141.0" layoutY="162.0" text="Password" />
+      <Label layoutX="141.0" layoutY="108.0" text="Nome utente" fx:id="usernameField"/>
+      <Label layoutX="141.0" layoutY="162.0" text="Password" fx:id="passwordField"/>
       <PasswordField layoutX="224.0" layoutY="158.0" />
       <CheckBox layoutX="225.0" layoutY="217.0" mnemonicParsing="false" text="Privilegi amministratore" />
-      <Button layoutX="546.0" layoutY="306.0" mnemonicParsing="false" text="Crea" />
+      <Button layoutX="546.0" layoutY="306.0" mnemonicParsing="false" text="Crea" onAction="#createEntity"/>
       <Button layoutX="480.0" layoutY="306.0" mnemonicParsing="false" style="-fx-background-color: #ff9999;" text="Annulla" textFill="#ac1919" />
    </children>
 </Pane>

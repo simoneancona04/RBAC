@@ -24,7 +24,7 @@ public class AdminController {
         for(String f : App.currentDirectoryChildren){
             
             Button tmp = new Button(f);
-            tmp.setOnAction(arg0);
+            //tmp.setOnAction(arg0);
             elementContainer.getChildren().add(tmp);
         }
     }

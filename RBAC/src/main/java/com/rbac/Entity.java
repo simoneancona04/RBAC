@@ -54,6 +54,10 @@ public class Entity {
         return password;
     }
 
+    public boolean isAdmin() {
+        return operations.contains(EntityOperation.IS_ADMIN);
+    }
+
     public void setName(String username){
         this.username = username;
     }
