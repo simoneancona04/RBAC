@@ -20,16 +20,20 @@ public class RegistrationController {
     private void createEntity() throws IOException {
         String user = usernameField.getText();
         String pass = passwordField.getText();
-        // boolean admin = checkBox.
+        boolean admin = checkBox.isSelected();
+        Entity entity = new Entity(user, pass, admin);
         try {
-            App.users.add(new Entity(user, pass));
+            App.users.add(entity);
         } catch (DuplicateName e) {
             // TODO:
         }
+
+        App.currentEntity = entity;
+        App.mainScene();
     }
 
     @FXML
     private void cancel() throws IOException {
-        App.setRoot("user");
+        App.mainScene();
     }
 }

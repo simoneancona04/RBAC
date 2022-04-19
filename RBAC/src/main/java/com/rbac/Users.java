@@ -9,9 +9,10 @@ public class Users {
 
     private List<Entity> users;
     private ObjectMapper om;
-    private final String filename = "local/users.json";
+    private final String filename = "RBAC/src/main/java/com/local/users.json";
     
     public Users() {
+        om = new ObjectMapper();
         try {
             users = om.readValue(new java.io.File(filename), new TypeReference<List<Entity>>(){});
         } catch (Exception e) {
@@ -24,6 +25,7 @@ public class Users {
             om.writeValue(new java.io.File(filename), users);
         } catch (IOException e) {
             // TODO Auto-generated catch block
+            System.out.println("ciao");
         }
     }
 

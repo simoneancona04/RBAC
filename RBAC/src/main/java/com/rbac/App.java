@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /**
@@ -36,6 +37,11 @@ public class App extends Application {
         scene.setRoot(loadFXML(fxml));
     }
 
+    static void mainScene() throws IOException {
+        if(currentEntity.isAdmin()) scene.setRoot(loadFXML("admin"));
+        else scene.setRoot(loadFXML("user"));
+    }
+
     @Override
     public void stop() {
         users.save();
@@ -47,11 +53,20 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
+    // Path, Java 7
+    private static void printCurrentWorkingDirectory2() {
+        String userDirectory = Paths.get("")
+                .toAbsolutePath()
+                .toString();
+        System.out.println(userDirectory);
+    }
+
     public static void main(String[] args) {
 
         /*
         if(users.isEmpty())
         */
+        printCurrentWorkingDirectory2();
 
         try {
             users.add(new Entity("mimmo","123"));

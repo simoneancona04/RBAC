@@ -101,6 +101,7 @@ public class Directory extends SysElement {
         return null;
     }
 
+    @JsonIgnore
     public String getPath() {
         ArrayList<String> path = new ArrayList<String>();
         Directory home = this;
