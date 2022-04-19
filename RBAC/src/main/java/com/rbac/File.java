@@ -1,7 +1,6 @@
 package com.rbac;
 
 public class File extends SysElement {
-//chiarlo
     private String content;
     private String extension;
 
@@ -12,7 +11,7 @@ public class File extends SysElement {
         this.extension = extension;
     }
 
-    public String getContent() { // per future letture
+    public String getContent() {
         return content;
     }
 
@@ -27,13 +26,6 @@ public class File extends SysElement {
     public void setExtension(String extension) {
         this.extension = extension;
     }
-
-
-
-    // ssecondo te ci sta tipo in syselement un attributo: data di creazione, ultima modifica?
-    //secondo me si, ma avevamo detto che sarebbero state cose da aggiungere più avanti, volendo. ma comunque non ci starebbero male
-    // ok, cmq, non riesco a fare quasi niente senza intellisense, esco da live share
-    //va bene, faccio un commit così hai la roba più recente, ok
     
     public boolean read(){
         return getAct().canRead(App.currentEntity);
