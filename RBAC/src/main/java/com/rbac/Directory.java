@@ -2,7 +2,6 @@ package com.rbac;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import com.fasterxml.jackson.annotation.*;
 
 
@@ -109,5 +108,36 @@ public class Directory extends SysElement {
         }
 
         return str;
+    }
+
+    public ArrayList<File> findFiles(String name, String extension) {
+        ArrayList<File> files = new ArrayList<File>();
+        for(File file : files) {
+            if(file.getName().equals(name) && file.getExtension().equals(extension))
+                files.add(file);
+        }
+        for(Directory dir : nodes) {
+            files.addAll(dir.findFiles(name, extension));
+        }
+        return files;
+    }
+
+    public ArrayList<Directory> findDirs(String name) {
+        ArrayList<Directory> dirs = new ArrayList<>();
+        for(Directory dir : nodes) {
+            if(dir.getName().equals(name))
+                dirs.add(dir);
+        }
+        for(Directory dir : nodes) {
+            dirs.addAll(dir.findDirs(name));
+        }
+        return dirs;
+    }
+
+    public void attach() {
+        for(Directory dir : nodes) {
+            dir.parent = this;
+            dir.attach();
+        }
     }
 }

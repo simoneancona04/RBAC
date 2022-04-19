@@ -1,5 +1,7 @@
 package com.rbac;
 import java.io.IOException;
+import java.util.ArrayList;
+
 import com.fasterxml.jackson.core.exc.StreamWriteException;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,9 +14,10 @@ public class FileSys {
     public FileSys() {
         om = new ObjectMapper();
         try {
-            om.readValue(new java.io.File(filename), Directory.class);
+            home = om.readValue(new java.io.File(filename), Directory.class);
+            home.attach();
         } catch (Exception e) {
-            
+            home = new Directory("home", (Directory)null);
         }
     }
 
@@ -32,5 +35,13 @@ public class FileSys {
         } catch (Exception e) {
             
         }
+    }
+
+    public ArrayList<File> findFiles(String name, String extension) {
+        return home.findFiles(name, extension);
+    }
+
+    public ArrayList<Directory> findDirs(String name) {
+        return home.findDirs(name);
     }
 }
