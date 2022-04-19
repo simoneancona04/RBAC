@@ -25,7 +25,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        if(users.isEmpty())
+        if(!users.isEmpty())
             scene = new Scene(loadFXML("login"), 800, 600);
         else
             scene = new Scene(loadFXML("registration"));
@@ -53,27 +53,8 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
-    // Path, Java 7
-    private static void printCurrentWorkingDirectory2() {
-        String userDirectory = Paths.get("")
-                .toAbsolutePath()
-                .toString();
-        System.out.println(userDirectory);
-    }
-
     public static void main(String[] args) {
 
-        /*
-        if(users.isEmpty())
-        */
-        printCurrentWorkingDirectory2();
-
-        try {
-            users.add(new Entity("mimmo","123"));
-        } catch (DuplicateName e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
         currentEntity = users.get("mimmo", "123");
         currentDirectoryChildren.add("file 1");
         currentDirectoryChildren.add("file 2");
