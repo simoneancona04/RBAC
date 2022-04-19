@@ -28,7 +28,7 @@ public class App extends Application {
         if(!users.isEmpty())
             scene = new Scene(loadFXML("login"), 800, 600);
         else
-            scene = new Scene(loadFXML("registration"));
+            scene = new Scene(loadFXML("registration"), 800, 600);
         stage.setScene(scene);
         stage.show();
     }
@@ -61,19 +61,6 @@ public class App extends Application {
     public static void main(String[] args) {
 
         currentEntity = users.get("mimmo", "123");
-        currentDirectoryChildren.add("file 1");
-        currentDirectoryChildren.add("file 2");
-        currentDirectoryChildren.add("file 3");
-        currentDirectoryChildren.add("file 4");
-        currentDirectoryChildren.add("file 5");
-        currentDirectoryChildren.add("file 6");
-        currentDirectoryChildren.add("file 7");
-        currentDirectoryChildren.add("file 8");
-        currentDirectoryChildren.add("file 9");
-        currentDirectoryChildren.add("file 10");
-        currentDirectoryChildren.add("file 11");
-        currentDirectoryChildren.add("file 12");
-        currentDirectoryChildren.add("uffa 13");
         launch();
     }
 

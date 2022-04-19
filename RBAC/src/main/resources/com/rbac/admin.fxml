@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -26,6 +27,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
+                        <HBox fx:id="fileActionContainer" prefHeight="35.0" prefWidth="750.0" />
                         <ScrollPane layoutX="1.0" layoutY="56.0" prefHeight="228.0" prefWidth="750.0">
                           <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="228.0" prefWidth="730.0">
@@ -40,7 +42,10 @@
           </Tab>
           <Tab text="Utenti">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox fx:id="usrActionContainer" prefHeight="35.0" prefWidth="750.0" />
+                     </children></AnchorPane>
             </content>
           </Tab>
         </tabs>

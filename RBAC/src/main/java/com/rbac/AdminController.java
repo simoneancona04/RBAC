@@ -33,7 +33,7 @@ public class AdminController {
         }
 
 
-        
+        /*
         elementContainer.getChildren().clear();
         for(String f : App.currentDirectoryChildren){
             
@@ -41,5 +41,6 @@ public class AdminController {
             //tmp.setOnAction(arg0);
             elementContainer.getChildren().add(tmp);
         }
+        */
     }
 }
