@@ -33,8 +33,13 @@ public class App extends Application {
         stage.show();
     }
 
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
+    static void setRoot(String fxml) {
+        try{
+            scene.setRoot(loadFXML(fxml));
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     static void mainScene() throws IOException {
