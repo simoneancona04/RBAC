@@ -16,7 +16,7 @@ public class Users {
         try {
             users = om.readValue(new java.io.File(filename), new TypeReference<List<Entity>>(){});
         } catch (Exception e) {
-            // TODO: handle exception
+            users = new ArrayList<Entity>();
         }
     }
 

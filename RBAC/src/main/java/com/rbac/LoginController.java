@@ -24,7 +24,7 @@ public class LoginController {
         if (username == null || password == null) return;
         Entity e = App.users.get(username, password);
         
-        if (e != null){
+        if (e != null) {
             //App.setRoot("admin");
             App.setRoot("user");
             App.currentEntity = e;

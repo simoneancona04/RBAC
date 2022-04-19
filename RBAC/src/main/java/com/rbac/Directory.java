@@ -12,16 +12,23 @@ public class Directory extends SysElement {
     private ArrayList<Directory> nodes;
     private ArrayList<File> files;
     
-    //@JsonCreator
+    @JsonCreator
     public Directory(@JsonProperty("name") String name, @JsonProperty("act") AccessTable act) {
         super(name, act);
         parent = null;
     }
 
     public Directory(String name, Directory parent) {
-        super(name, parent.getAct().clone());
+        super(name, new AccessTable());
+        if(parent != null)
+            setAct(parent.copyAct());
     }
 
+    /**
+     * Aggiungi una nuova cartella
+     * @param directory cartella da aggiungere
+     * @throws DuplicateName non possono esserci cartella con lo stesso nome
+     */
     public void addDirectory(Directory directory) throws DuplicateName {
         if(containsDir(directory)) throw new DuplicateName();
         nodes.add(directory);
