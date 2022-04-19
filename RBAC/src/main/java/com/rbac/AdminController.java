@@ -1,8 +1,5 @@
 package com.rbac;
 
-import java.io.IOException;
-import java.util.HashMap;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.FlowPane;
@@ -25,19 +22,19 @@ public class AdminController {
         for(EntityOperation op :App.currentEntity.getOperations()){
             switch(op){
                 case ADD_NEW_USER:
-                Button tmp = new Button("add new user");
-                tmp.setOnAction(e->App.setRoot("registration"));
-                usrActionContainer.getChildren().add(tmp);
-                break;
+                    Button tmp = new Button("add new user");
+                    tmp.setOnAction(e->App.setRoot("registration"));
+                    usrActionContainer.getChildren().add(tmp);
+                    break;
             }
         }
 
 
         /*
         elementContainer.getChildren().clear();
-        for(String f : App.currentDirectoryChildren){
+        for(Directory f : App.currentDirectory.getDirectories()){
             
-            Button tmp = new Button(f);
+            Button tmp = new Button(f.getName());
             //tmp.setOnAction(arg0);
             elementContainer.getChildren().add(tmp);
         }
