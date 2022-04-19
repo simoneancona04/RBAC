@@ -1,49 +1,61 @@
 package com.rbac;
+import java.util.ArrayList;
+
 import com.fasterxml.jackson.annotation.*;
 
 // scusa se ti ho modificato un po' questo file ma mi serviva per jackson
 public class Entity {
 //chiarlo
-    private String userName;
+    private String username;
     private String password;
-    //TODO private Role role;   // Operation?
+    private ArrayList<EntityOperation> operations;
 
     // ho bisongo di qualcosa per le Operations...
 
     @JsonCreator
-    public Entity(@JsonProperty("userName") String userName, @JsonProperty("userName") String password) {
-        this.userName = userName;
+    public Entity(@JsonProperty("username") String username, @JsonProperty("password") String password, @JsonProperty("operations") ArrayList<EntityOperation> operations) {
+        this.username = username;
         this.password = password;
-        //this.role = role;
+        this.operations = operations;
 
     }
 
-    public void createEntity(String userName, String password, String role) {
-        //implementazione tipo:
-        //utenti.add( new Entity(userName, password, ruolo))
-        //a seconda se si utilizza direttamente json o si tiene un appoggio
+    public Entity(String username, String password) {
+        this.username = username;
+        this.password = password;
+        operations = new ArrayList<>();
+
+    }
+
+    public Entity(String username, String password, boolean isAdmin) {
+        this.username = username;
+        this.password = password;
+        operations = new ArrayList<>();
+        if(isAdmin) {
+            operations.add(EntityOperation.IS_ADMIN);
+        }
     }
 
     @Override
     public boolean equals(Object o) {
-        return userName.equals(((Entity)o).userName) && userName.equals(((Entity)o).password);
+        return username.equals(((Entity)o).username) && username.equals(((Entity)o).password);
     }
 
     // anche di un metodo clone deep
     public Entity clone(){
-        return new Entity(userName,password);
+        return new Entity(username,password);
     }
 
     public String getName(){
-        return userName;
+        return username;
     }
 
     public String getPassword(){
         return password;
     }
 
-    public void setName(String userName){
-        this.userName = userName;
+    public void setName(String username){
+        this.username = username;
     }
 
     public void setPassword(String password){

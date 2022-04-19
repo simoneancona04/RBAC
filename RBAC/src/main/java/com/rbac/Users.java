@@ -2,7 +2,6 @@ package com.rbac;
 
 import java.io.IOException;
 import java.util.*;
-import com.fasterxml.jackson.core.*;
 import com.fasterxml.jackson.core.type.*;
 import com.fasterxml.jackson.databind.*;
 
@@ -38,6 +37,10 @@ public class Users {
             if(entity.equals(e)) return true;
         }
         return false;
+    }
+
+    public boolean isEmpty() {
+        return users.isEmpty();
     }
 
     public void remove(Entity e) throws UserNotFound {

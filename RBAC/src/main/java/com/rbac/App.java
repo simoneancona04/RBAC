@@ -24,7 +24,10 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("login"), 800, 600);
+        if(users.isEmpty())
+            scene = new Scene(loadFXML("login"), 800, 600);
+        else
+            scene = new Scene(loadFXML("registration"));
         stage.setScene(scene);
         stage.show();
     }
@@ -33,12 +36,22 @@ public class App extends Application {
         scene.setRoot(loadFXML(fxml));
     }
 
+    @Override
+    public void stop() {
+        users.save();
+        fileSys.save();
+    }
+
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
 
     public static void main(String[] args) {
+
+        /*
+        if(users.isEmpty())
+        */
 
         try {
             users.add(new Entity("mimmo","123"));
