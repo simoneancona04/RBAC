@@ -48,6 +48,7 @@ public class Entity {
         return password;
     }
 
+    @JsonIgnore
     public boolean isAdmin() {
         return operations.contains(EntityOperation.IS_ADMIN);
     }

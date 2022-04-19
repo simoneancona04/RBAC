@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class FileSys {
     private Directory home; // chiamo home la directory principale che conterrà tutto
     private ObjectMapper om;
-    private final String filename = "local/fileSys.json";
+    private final String filename = "RBAC/src/main/java/com/local/fileSys.json";
 
     public FileSys() {
         om = new ObjectMapper();
@@ -29,7 +29,7 @@ public class FileSys {
         try {
             om.writeValue(new java.io.File(filename), home);
         } catch (Exception e) {
-            
+            System.out.println();
         }
     }
 
