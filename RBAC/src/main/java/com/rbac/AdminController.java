@@ -21,8 +21,11 @@ public class AdminController {
 
     public void refreshContent() {
         elementContainer.getChildren().clear();
-        for(String f : App.currentDirectoryChildren){   
-            elementContainer.getChildren().add(new Button(f));
+        for(String f : App.currentDirectoryChildren){
+            
+            Button tmp = new Button(f);
+            tmp.setOnAction(arg0);
+            elementContainer.getChildren().add(tmp);
         }
     }
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="341.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="223.0" layoutY="35.0" text="Nuovo  utente">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField layoutX="225.0" layoutY="104.0" />
+      <Label layoutX="141.0" layoutY="108.0" text="Nome utente" />
+      <Label layoutX="141.0" layoutY="162.0" text="Password" />
+      <PasswordField layoutX="224.0" layoutY="158.0" />
+      <CheckBox layoutX="225.0" layoutY="217.0" mnemonicParsing="false" text="Privilegi amministratore" />
+      <Button layoutX="546.0" layoutY="306.0" mnemonicParsing="false" text="Crea" />
+      <Button layoutX="480.0" layoutY="306.0" mnemonicParsing="false" style="-fx-background-color: #ff9999;" text="Annulla" textFill="#ac1919" />
+   </children>
+</Pane>
