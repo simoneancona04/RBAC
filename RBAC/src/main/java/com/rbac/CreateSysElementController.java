@@ -23,7 +23,7 @@ public class CreateSysElementController {
                 App.currentDirectory.addFile(new File(name,"",extension));
                 App.mainScene();
             } catch (DuplicateName e) {
-                // TODO se esiste già
+                // TODO chiarlo alert se esiste già
                 e.printStackTrace();
             }
         }
@@ -40,7 +40,7 @@ public class CreateSysElementController {
                 App.mainScene();
 
             } catch (DuplicateName e) {
-                // TODO se esiste già
+                // TODO chiarlo se esiste già
                 e.printStackTrace();
             }
         }

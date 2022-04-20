@@ -1,6 +1,5 @@
 package com.rbac;
 
-import java.util.ArrayList;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -58,6 +57,8 @@ public class AdminController {
                     tmp.setOnAction(e->App.setRoot("registration"));
                     usrActionContainer.getChildren().add(tmp);
                 break;
+                default:
+                break;
                 
 
                 
@@ -65,7 +66,7 @@ public class AdminController {
         }
         tmp = new Button("Nuovo");
         tmp.setOnAction(e->{
-            //if(App.currentDirectory.getAct().canWrite(App.currentEntity)) // TODO 
+            //if(App.currentDirectory.getAct().canWrite(App.currentEntity)) // TODO anco
                 App.setRoot("createSysElement");
             
         });
@@ -79,9 +80,9 @@ public class AdminController {
     public void goTo() {
         Directory dir = App.fileSys.getHome().getDirectory(pathField.getText());
         if(dir != null){
-            //TODO directory non esistente
-            //if(dir.getAct().canRead(App.currentEntity)){ //TODO canread
-            //TODO directory non accessibile
+            //TODO anco directory non esistente
+            //if(dir.getAct().canRead(App.currentEntity)){ //TODO anco canread
+            //TODO anco directory non accessibile
 
                 App.currentDirectory = dir;
                 refreshContent();

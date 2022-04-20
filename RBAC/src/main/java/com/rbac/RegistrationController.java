@@ -25,7 +25,7 @@ public class RegistrationController {
         try {
             App.users.add(entity);
         } catch (DuplicateName e) {
-            // TODO:
+            // TODO chiarlo
         }
         
         if(App.currentEntity==null) {

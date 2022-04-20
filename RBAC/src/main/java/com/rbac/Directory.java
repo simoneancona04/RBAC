@@ -66,10 +66,6 @@ public class Directory extends SysElement {
         return parent;
     }
 
-    private void setParent(Directory parent) {
-        this.parent = parent;
-    }
-
     public ArrayList<File> getFiles() {
         return files;
     }

@@ -24,7 +24,6 @@ public class Users {
         try {
             om.writeValue(new java.io.File(filename), users);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
         }
     }
 
