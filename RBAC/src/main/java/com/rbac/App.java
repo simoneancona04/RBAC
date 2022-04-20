@@ -54,8 +54,6 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-
-        currentEntity = users.get("mimmo", "123");
         currentDirectory = fileSys.getHome();
         launch();
     }

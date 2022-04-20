@@ -16,12 +16,19 @@ public class Directory extends SysElement {
     public Directory(@JsonProperty("name") String name, @JsonProperty("act") AccessTable act) {
         super(name, act);
         parent = null;
+        nodes = new ArrayList<Directory>();
+        files = new ArrayList<File>();
     }
 
     public Directory(String name, Directory parent) {
         super(name, new AccessTable());
-        if(parent != null)
+        nodes = new ArrayList<Directory>();
+        files = new ArrayList<File>();
+        if(parent != null){
             setAct(parent.copyAct());
+            this.parent = parent;
+        }
+        
     }
 
     /**
@@ -38,6 +45,7 @@ public class Directory extends SysElement {
         if(containsFile(file)) throw new DuplicateName();
         files.add(file);
     }
+
 
     public boolean containsDir(Directory dir) {
         for (Directory node : nodes) {
@@ -58,12 +66,24 @@ public class Directory extends SysElement {
         return parent;
     }
 
+    private void setParent(Directory parent) {
+        this.parent = parent;
+    }
+
     public ArrayList<File> getFiles() {
         return files;
     }
 
+    public void  setFiles( ArrayList<File> files){
+        this.files = files;
+    }
+
     public ArrayList<Directory> getDirectories() {
         return nodes;
+    }
+
+    public void setDirectories(ArrayList<Directory> nodes){
+        this.nodes = nodes;
     }
 
     public Directory getDirectory(String path) {
@@ -105,14 +125,16 @@ public class Directory extends SysElement {
     public String getPath() {
         ArrayList<String> path = new ArrayList<String>();
         Directory home = this;
+        
         while(home.parent != null) {
             path.add("/");
             path.add(home.getName());
+            home = home.parent;
         }
 
         String str = "";
-        for(int i = path.size() - 1; i > 0; i--) {
-            str.concat(path.get(i));
+        for(int i = path.size() - 1; i >= 0; i--) {
+            str = str.concat(path.get(i));
         }
 
         return str;

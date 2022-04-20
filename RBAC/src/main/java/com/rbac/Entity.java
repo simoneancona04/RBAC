@@ -28,6 +28,9 @@ public class Entity {
         operations = new ArrayList<>();
         if(isAdmin) {
             operations.add(EntityOperation.IS_ADMIN);
+            operations.add(EntityOperation.CREATE);
+            operations.add(EntityOperation.ADD_NEW_USER);
+            operations.add(EntityOperation.MODIFY_USER_OPERATIONS);
         }
     }
 

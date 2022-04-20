@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -16,6 +19,16 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <children>
+      <Pane prefHeight="47.0" prefWidth="760.0">
+         <children>
+            <Button alignment="CENTER" layoutX="691.0" layoutY="11.0" mnemonicParsing="false" text="log out" />
+            <Label fx:id="usernameLabel" alignment="CENTER" layoutX="206.0" layoutY="6.0" prefHeight="17.0" prefWidth="348.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
       <Label text="Gestione">
          <font>
             <Font size="24.0" />
@@ -27,7 +40,8 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <HBox fx:id="fileActionContainer" prefHeight="35.0" prefWidth="750.0" />
+                        <HBox fx:id="fileActionContainer" prefHeight="25.0" prefWidth="750.0" />
+                        <TextField fx:id="pathField" layoutX="53.0" layoutY="31.0" prefHeight="25.0" prefWidth="644.0" />
                         <ScrollPane layoutX="1.0" layoutY="56.0" prefHeight="228.0" prefWidth="750.0">
                           <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="228.0" prefWidth="730.0">
@@ -37,6 +51,8 @@
                               </AnchorPane>
                           </content>
                         </ScrollPane>
+                        <Label layoutY="31.0" prefHeight="25.0" prefWidth="54.0" text="Percorso:" />
+                        <Button layoutX="697.0" layoutY="31.0" mnemonicParsing="false" onAction="#goTo" prefHeight="25.0" prefWidth="50.0" text="Vai" />
                      </children></AnchorPane>
             </content>
           </Tab>

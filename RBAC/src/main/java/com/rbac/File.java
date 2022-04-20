@@ -10,6 +10,11 @@ public class File extends SysElement {
         this.content = content;
         this.extension = extension;
     }
+    public File(String name, String content, String extension) {
+        super(name);
+        this.content = content;
+        this.extension = extension;
+    }
 
     public String getContent() {
         return content;

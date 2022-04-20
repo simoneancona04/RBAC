@@ -27,8 +27,10 @@ public class RegistrationController {
         } catch (DuplicateName e) {
             // TODO:
         }
-
-        App.currentEntity = entity;
+        
+        if(App.currentEntity==null) {
+            App.currentEntity = entity;
+        }
         App.mainScene();
     }
 

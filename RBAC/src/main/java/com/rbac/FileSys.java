@@ -27,9 +27,10 @@ public class FileSys {
 
     public void save() {
         try {
+            //System.out.println("qui");
             om.writeValue(new java.io.File(filename), home);
         } catch (Exception e) {
-            System.out.println();
+           e.printStackTrace();
         }
     }
 

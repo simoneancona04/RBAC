@@ -9,6 +9,11 @@ public class SysElement {
         this.act = new AccessTable();
     }
 
+    public SysElement(String name) {
+        this.name = name;
+        this.act = new AccessTable();
+    }
+
     public SysElement(String name, AccessTable act) {
         this.name = name;
         this.act = act;
